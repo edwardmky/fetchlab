@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FETCHLAB — Performance Dog Lifestyle</title>
+    <meta name="description" content="Premium dog apparel and accessories. Designed in Hong Kong. Free worldwide shipping on orders over $120.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- ====== TOP BAR ====== -->
+<div class="topbar">
+    <div class="topbar-inner">
+        <a href="pages/shipping.html">Free shipping on orders over $120</a>
+        <span class="topbar-sep">|</span>
+        <a href="pages/track-order.html">Track your order</a>
+        <span class="topbar-sep">|</span>
+        <a href="pages/contact.html">Need help? Contact us</a>
+    </div>
+</div>
+
+<!-- ====== NAV ====== -->
+<nav class="nav" id="nav">
+    <div class="nav-inner">
+        <div class="nav-left">
+            <button class="nav-hamburger" id="menuToggle" aria-label="Menu">
+                <span></span><span></span>
+            </button>
+            <div class="nav-links" id="navLinks">
+                <div class="nav-dropdown">
+                    <a href="pages/collection.html" class="nav-link">Shop</a>
+                    <div class="dropdown-panel">
+                        <div class="dropdown-grid">
+                            <div class="dropdown-col">
+                                <h6>Performance</h6>
+                                <a href="pages/collection.html">Jackets & Coats</a>
+                                <a href="pages/collection.html">Harnesses</a>
+                                <a href="pages/collection.html">Run Vests</a>
+                                <a href="pages/collection.html">Rain Gear</a>
+                            </div>
+                            <div class="dropdown-col">
+                                <h6>Lifestyle</h6>
+                                <a href="pages/collection.html">Collars</a>
+                                <a href="pages/collection.html">Leads</a>
+                                <a href="pages/collection.html">Bandanas</a>
+                                <a href="pages/collection.html">Sweaters</a>
+                            </div>
+                            <div class="dropdown-col">
+                                <h6>Home</h6>
+                                <a href="pages/collection.html">Beds</a>
+                                <a href="pages/collection.html">Blankets</a>
+                                <a href="pages/collection.html">Bowls</a>
+                                <a href="pages/collection.html">Carriers</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="pages/collection.html" class="nav-link">New In</a>
+                <a href="pages/about.html" class="nav-link">Our Story</a>
+            </div>
+        </div>
+        <a href="index.html" class="nav-logo">FETCHLAB</a>
+        <div class="nav-right">
+            <button class="nav-icon" id="searchToggle" aria-label="Search">
+                <i class="fas fa-search"></i>
+            </button>
+            <a href="pages/contact.html" class="nav-icon" aria-label="Account">
+                <i class="fas fa-user"></i>
+            </a>
+            <button class="nav-icon" id="cartToggle" aria-label="Shopping bag">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-badge" id="cartBadge">0</span>
+            </button>
+        </div>
+    </div>
+    <!-- Search -->
+    <div class="search-panel" id="searchPanel">
+        <div class="search-inner">
+            <input type="text" id="searchInput" placeholder="What are you looking for?" autocomplete="off">
+            <button id="searchClose"><i class="fas fa-times"></i></button>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+    <div class="mm-header">
+        <span class="nav-logo">FETCHLAB</span>
+        <button id="mmClose"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="mm-body">
+        <a href="pages/collection.html">Shop All</a>
+        <a href="pages/collection.html">New In</a>
+        <a href="pages/collection.html">Performance</a>
+        <a href="pages/collection.html">Lifestyle</a>
+        <a href="pages/collection.html">Home</a>
+        <a href="pages/about.html">Our Story</a>
+        <a href="pages/contact.html">Contact</a>
+    </div>
+    <div class="mm-footer">
+        <a href="pages/shipping.html">Shipping & Returns</a>
+        <a href="pages/faq.html">FAQ</a>
+        <a href="pages/track-order.html">Track Order</a>
+    </div>
+</div>
+
+<!-- ====== HERO ====== -->
+<section class="hero">
+    <div class="hero-img-wrap">
+        <img src="images/hero/hero-main.jpg" alt="FETCHLAB AW26 Collection" class="hero-img" id="heroImg">
+        <div class="hero-img-fallback" id="heroFallback">
+            <span>🐕</span>
+            <p>Upload your hero image to<br>images/hero/hero-main.jpg</p>
+        </div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <p class="hero-eyebrow">Autumn / Winter 2026</p>
+        <h1 class="hero-title">The Lab Collection</h1>
+        <p class="hero-subtitle">Performance meets craftsmanship — designed in Hong Kong for dogs who demand both.</p>
+        <div class="hero-actions">
+            <a href="#products" class="btn-main">Shop the Collection</a>
+            <a href="pages/about.html" class="btn-outline-w">Our Story</a>
+        </div>
+    </div>
+</section>
+
+<!-- ====== CATEGORY STRIP ====== -->
+<section class="cat-strip">
+    <div class="container">
+        <div class="cat-strip-grid">
+            <a href="pages/collection.html" class="cat-item">
+                <div class="cat-img-wrap">
+                    <img src="images/collections/outerwear.jpg" alt="Performance" class="cat-img" onerror="this.parentNode.innerHTML='<span>🧥</span>'">
+                </div>
+                <span>Performance</span>
+            </a>
+            <a href="pages/collection.html" class="cat-item">
+                <div class="cat-img-wrap">
+                    <img src="images/collections/lifestyle.jpg" alt="Lifestyle" class="cat-img" onerror="this.parentNode.innerHTML='<span>✨</span>'">
+                </div>
+                <span>Lifestyle</span>
+            </a>
+            <a href="pages/collection.html" class="cat-item">
+                <div class="cat-img-wrap">
+                    <img src="images/collections/home.jpg" alt="Home" class="cat-img" onerror="this.parentNode.innerHTML='<span>🛋️</span>'">
+                </div>
+                <span>Home</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ====== PRODUCTS ====== -->
+<section class="products" id="products">
+    <div class="container">
+        <div class="section-head">
+            <h2>New In</h2>
+            <a href="pages/collection.html" class="view-all">View All →</a>
+        </div>
+        <div class="product-grid" id="productGrid"></div>
+    </div>
+</section>
+
+<!-- ====== EDITORIAL SPLIT ====== -->
+<section class="editorial">
+    <div class="editorial-row">
+        <div class="editorial-img-col">
+            <img src="images/brand/story-1.jpg" alt="FETCHLAB Story" class="editorial-photo" onerror="this.parentNode.innerHTML='<div class=ed-fallback>🐕‍🦺</div>'">
+        </div>
+        <div class="editorial-text-col">
+            <p class="editorial-label">Our Philosophy</p>
+            <h2>Designed in Hong Kong. Loved Worldwide.</h2>
+            <p>At FETCHLAB, we believe dogs deserve gear as thoughtfully designed as our own. Every product is engineered for performance, finished with luxury, and built to last.</p>
+            <a href="pages/about.html" class="btn-dark">Read Our Story</a>
+        </div>
+    </div>
+</section>
+
+<!-- ====== SECOND PRODUCT ROW ====== -->
+<section class="products" id="products2">
+    <div class="container">
+        <div class="section-head">
+            <h2>Bestsellers</h2>
+            <a href="pages/collection.html" class="view-all">View All →</a>
+        </div>
+        <div class="product-grid" id="bestsellerGrid"></div>
+    </div>
+</section>
+
+<!-- ====== FEATURES STRIP ====== -->
+<section class="features-strip">
+    <div class="container">
+        <div class="features-grid">
+            <div class="feature">
+                <i class="fas fa-truck"></i>
+                <div>
+                    <strong>Free Worldwide Shipping</strong>
+                    <p>On all orders over $120</p>
+                </div>
+            </div>
+            <div class="feature">
+                <i class="fas fa-undo"></i>
+                <div>
+                    <strong>30 Day Returns</strong>
+                    <p>Easy & hassle-free</p>
+                </div>
+            </div>
+            <div class="feature">
+                <i class="fas fa-shield-alt"></i>
+                <div>
+                    <strong>Vet Approved</strong>
+                    <p>Every product is safety tested</p>
+                </div>
+            </div>
+            <div class="feature">
+                <i class="fas fa-leaf"></i>
+                <div>
+                    <strong>Sustainable Materials</strong>
+                    <p>Better for dogs & the planet</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ====== REVIEWS ====== -->
+<section class="reviews">
+    <div class="container">
+        <div class="section-head">
+            <h2>What Our Customers Say</h2>
+        </div>
+        <div class="reviews-row">
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p>"The Lab Jacket is genuinely the best thing I've ever bought for my dog. The quality is on par with my own designer coat."</p>
+                <div class="review-author">
+                    <strong>James L.</strong>
+                    <span>London, UK</span>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p>"The packaging alone felt like a luxury unboxing. The leather collar is absolutely beautiful. My poodle gets so many compliments."</p>
+                <div class="review-author">
+                    <strong>Sophie C.</strong>
+                    <span>New York, USA</span>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p>"Finally a brand that understands both performance and aesthetics. Everything I've ordered has been impeccable quality."</p>
+                <div class="review-author">
+                    <strong>Alex M.</strong>
+                    <span>Sydney, AU</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ====== NEWSLETTER ====== -->
+<section class="newsletter">
+    <div class="container">
+        <div class="nl-inner">
+            <h2>Get 15% Off Your First Order</h2>
+            <p>Subscribe for early access, exclusive offers, and dog care tips.</p>
+            <form class="nl-form" id="nlForm">
+                <input type="email" placeholder="Email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- CORRECT footer links — all go to real pages -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+
+            <div class="footer-col footer-brand-col">
+                <h3 class="footer-logo-text">FETCHLAB</h3>
+                <p>Premium dog lifestyle. Designed in
+                Hong Kong. Engineered for performance.
+                Finished with luxury.</p>
+                <div class="social-row">
+                    <a href="https://instagram.com/fetchlab.co"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://tiktok.com/@fetchlab.co"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="https://pinterest.com/fetchlab.co"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Pinterest">
+                        <i class="fab fa-pinterest-p"></i>
+                    </a>
+                    <a href="https://facebook.com/fetchlab.co"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Shop</h4>
+                <a href="pages/collection.html">
+                    New Arrivals
+                </a>
+                <a href="pages/collection.html">
+                    Performance
+                </a>
+                <a href="pages/collection.html">
+                    Lifestyle
+                </a>
+                <a href="pages/collection.html">
+                    Home & Living
+                </a>
+                <a href="pages/collection.html">
+                    Sale
+                </a>
+            </div>
+
+            <div class="footer-col">
+                <h4>About</h4>
+                <a href="pages/about.html">Our Story</a>
+                <a href="pages/about.html">Sustainability</a>
+                <a href="pages/contact.html">Careers</a>
+                <a href="pages/contact.html">Press</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Help</h4>
+                <a href="pages/contact.html">Contact Us</a>
+                <a href="pages/shipping.html">
+                    Shipping & Returns
+                </a>
+                <a href="pages/size-guide.html">
+                    Size Guide
+                </a>
+                <a href="pages/faq.html">FAQ</a>
+                <a href="pages/track-order.html">
+                    Track Order
+                </a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="pages/privacy.html">
+                    Privacy Policy
+                </a>
+                <a href="pages/terms.html">
+                    Terms & Conditions
+                </a>
+                <p class="footer-contact-info">
+                    hello@fetchlab.co<br>
+                    WhatsApp: +852 0000 0000<br>
+                    Mon–Fri 10AM–7PM HKT
+                </p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 FETCHLAB. All rights reserved.</span>
+            <div class="pay-icons">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-amex"></i>
+                <i class="fab fa-cc-paypal"></i>
+                <i class="fab fa-cc-apple-pay"></i>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+<!-- CART DRAWER -->
+<div class="drawer" id="cartDrawer">
+    <div class="drawer-head">
+        <h3>Shopping Bag</h3>
+        <button id="drawerClose"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="drawer-body" id="drawerBody"></div>
+    <div class="drawer-foot">
+        <div class="drawer-total"><span>Subtotal</span><span id="drawerTotal">$0.00</span></div>
+        <a href="pages/checkout.html" class="btn-main drawer-checkout-btn">Checkout</a>
+        <a href="pages/cart.html" class="drawer-viewbag">View bag →</a>
+    </div>
+</div>
+<div class="overlay" id="overlay"></div>
+
+<div id="toasts" class="toasts"></div>
+<script src="js/app.js"></script>
+</body>
+</html>
