@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout — FETCHLAB</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<nav class="nav"><div class="nav-inner"><div class="nav-left"><a href="cart.html" class="nav-link" style="font-size:.78rem">← Back to Bag</a></div><a href="../index.html" class="nav-logo">FETCHLAB</a><div class="nav-right"><span style="font-size:.72rem;color:var(--text-muted)">🔒 Secure Checkout</span></div></div></nav>
+<div class="page-title-bar"><h1>Checkout</h1></div>
+<div class="page-body"><div class="container"><form id="checkoutForm"><div style="display:grid;grid-template-columns:1fr 360px;gap:40px;align-items:start"><div><div class="form-box"><h3>Contact Information</h3><div class="frow"><div class="fgroup"><label>First Name</label><input type="text" required></div><div class="fgroup"><label>Last Name</label><input type="text" required></div></div><div class="fgroup"><label>Email</label><input type="email" required></div><div class="fgroup"><label>Phone</label><input type="tel"></div></div><div class="form-box"><h3>Shipping Address</h3><div class="fgroup"><label>Address</label><input type="text" required></div><div class="frow"><div class="fgroup"><label>City</label><input type="text" required></div><div class="fgroup"><label>Postcode</label><input type="text" required></div></div><div class="fgroup"><label>Country</label><select required><option value="">Select Country</option><option>United Kingdom</option><option>United States</option><option>Australia</option><option>Canada</option><option>Hong Kong</option><option>Singapore</option><option>Germany</option><option>France</option><option>Japan</option></select></div></div><div class="form-box"><h3>Payment</h3><div class="fgroup"><label>Card Number</label><input type="text" placeholder="1234 5678 9012 3456"></div><div class="frow"><div class="fgroup"><label>Expiry</label><input type="text" placeholder="MM/YY"></div><div class="fgroup"><label>CVC</label><input type="text" placeholder="123"></div></div></div></div><div class="summary-box"><h3>Your Order</h3><div id="coItems"></div><div class="s-line" style="margin-top:12px"><span>Subtotal</span><span id="coSub">$0.00</span></div><div class="s-line"><span>Shipping</span><span>Free</span></div><div class="s-line total"><span>Total</span><span id="coTot">$0.00</span></div><button type="submit" class="btn-main" style="width:100%;margin-top:16px;border:none;cursor:pointer">Place Order</button><p style="text-align:center;margin-top:10px;font-size:.72rem;color:var(--text-muted)">🔒 Your payment is secure & encrypted</p></div></div></form></div></div>
+<div id="toasts" class="toasts"></div>
+<script src="../js/app.js"></script>
+</body>
+</html>

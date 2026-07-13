@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop All — FETCHLAB</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<nav class="nav"><div class="nav-inner"><div class="nav-left"><a href="../index.html" class="nav-link" style="font-size:.78rem">Home</a><a href="about.html" class="nav-link" style="font-size:.78rem">About</a></div><a href="../index.html" class="nav-logo">FETCHLAB</a><div class="nav-right"><button class="nav-icon" id="cartToggle"><i class="fas fa-shopping-bag"></i><span class="cart-badge" id="cartBadge">0</span></button></div></div></nav>
+<div class="page-title-bar"><h1>Shop All</h1></div>
+<div class="page-body"><div class="container"><div class="coll-layout"><aside class="coll-sidebar"><div class="sidebar-group"><h5>Category</h5><div class="sidebar-opt" onclick="renderCollection('all')"><input type="radio" name="c" checked> All Products</div><div class="sidebar-opt" onclick="renderCollection('outerwear')"><input type="radio" name="c"> Outerwear</div><div class="sidebar-opt" onclick="renderCollection('lifestyle')"><input type="radio" name="c"> Lifestyle</div><div class="sidebar-opt" onclick="renderCollection('home')"><input type="radio" name="c"> Home</div><div class="sidebar-opt" onclick="renderCollection('carriers')"><input type="radio" name="c"> Carriers</div></div></aside><div><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;padding-bottom:12px;border-bottom:1px solid var(--border-light)"><span id="prodCount" style="font-size:.78rem;color:var(--text-muted)">12 products</span></div><div class="product-grid" id="collGrid"></div></div></div></div></div>
+<div class="drawer" id="cartDrawer"><div class="drawer-head"><h3>Shopping Bag</h3><button id="drawerClose"><i class="fas fa-times"></i></button></div><div class="drawer-body" id="drawerBody"></div><div class="drawer-foot"><div class="drawer-total"><span>Subtotal</span><span id="drawerTotal">$0.00</span></div><a href="checkout.html" class="btn-main drawer-checkout-btn">Checkout</a></div></div><div class="overlay" id="overlay"></div>
+<div id="toasts" class="toasts"></div>
+<script src="../js/app.js"></script>
+</body>
+</html>

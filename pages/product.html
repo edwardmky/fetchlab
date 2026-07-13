@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product — FETCHLAB</title>
+    <meta id="metaDesc" name="description" content="">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/product.css">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+    <div class="nav-inner">
+        <div class="nav-left">
+            <button class="nav-hamburger"
+                id="menuToggle">
+                <span></span><span></span>
+            </button>
+            <div class="nav-links">
+                <div class="nav-dropdown">
+                    <a href="collection.html"
+                        class="nav-link">Shop</a>
+                    <div class="dropdown-panel">
+                        <div class="dropdown-grid">
+                            <div class="dropdown-col">
+                                <h6>Performance</h6>
+                                <a href="collection.html">Jackets & Coats</a>
+                                <a href="collection.html">Harnesses</a>
+                                <a href="collection.html">Run Vests</a>
+                            </div>
+                            <div class="dropdown-col">
+                                <h6>Lifestyle</h6>
+                                <a href="collection.html">Collars</a>
+                                <a href="collection.html">Leads</a>
+                                <a href="collection.html">Bandanas</a>
+                            </div>
+                            <div class="dropdown-col">
+                                <h6>Home</h6>
+                                <a href="collection.html">Beds</a>
+                                <a href="collection.html">Blankets</a>
+                                <a href="collection.html">Carriers</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="collection.html" class="nav-link">New In</a>
+                <a href="about.html" class="nav-link">Our Story</a>
+            </div>
+        </div>
+        <a href="../index.html" class="nav-logo">FETCHLAB</a>
+        <div class="nav-right">
+            <button class="nav-icon"
+                id="searchToggle">
+                <i class="fas fa-search"></i>
+            </button>
+            <button class="nav-icon"
+                id="cartToggle">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-badge"
+                    id="cartBadge">0</span>
+            </button>
+        </div>
+    </div>
+    <div class="search-panel" id="searchPanel">
+        <div class="search-inner">
+            <input type="text" id="searchInput"
+                placeholder="Search products..."
+                autocomplete="off">
+            <button id="searchClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+    <div class="mm-header">
+        <span class="nav-logo">FETCHLAB</span>
+        <button id="mmClose">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    <div class="mm-body">
+        <a href="collection.html">Shop All</a>
+        <a href="collection.html">New In</a>
+        <a href="collection.html">Performance</a>
+        <a href="collection.html">Lifestyle</a>
+        <a href="collection.html">Home</a>
+        <a href="about.html">Our Story</a>
+    </div>
+</div>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+    <div class="container">
+        <a href="../index.html">Home</a>
+        <span>/</span>
+        <a href="collection.html">Shop</a>
+        <span>/</span>
+        <span id="breadcrumbName">Loading...</span>
+    </div>
+</div>
+
+<!-- PRODUCT SKELETON (shows while loading) -->
+<div class="product-skeleton" id="productSkeleton">
+    <div class="container">
+        <div class="product-layout">
+            <div class="product-gallery-col">
+                <div class="skeleton-main"></div>
+                <div class="skeleton-thumbs">
+                    <div class="skeleton-thumb"></div>
+                    <div class="skeleton-thumb"></div>
+                    <div class="skeleton-thumb"></div>
+                </div>
+            </div>
+            <div class="product-info-col">
+                <div class="skeleton-text wide"></div>
+                <div class="skeleton-text medium"></div>
+                <div class="skeleton-text short"></div>
+                <div class="skeleton-block"></div>
+                <div class="skeleton-block tall"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- PRODUCT CONTENT (hidden until loaded) -->
+<main class="product-main" id="productMain"
+    style="display:none">
+    <div class="container">
+        <div class="product-layout">
+
+            <!-- LEFT: IMAGE GALLERY -->
+            <div class="product-gallery-col">
+                <!-- Main Image -->
+                <div class="product-main-img"
+                    id="mainImgWrap">
+                    <img id="mainImg"
+                        src=""
+                        alt=""
+                        class="product-main-photo">
+                    <!-- Zoom hint -->
+                    <div class="img-zoom-hint">
+                        <i class="fas fa-search-plus"></i>
+                        Click to zoom
+                    </div>
+                    <!-- Badges -->
+                    <div class="product-badges"
+                        id="productBadges"></div>
+                </div>
+
+                <!-- Thumbnail Strip -->
+                <div class="product-thumbs"
+                    id="productThumbs"></div>
+
+                <!-- Lightbox -->
+                <div class="lightbox" id="lightbox">
+                    <button class="lightbox-close"
+                        id="lightboxClose">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <button class="lightbox-prev"
+                        id="lightboxPrev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <img id="lightboxImg"
+                        src="" alt="">
+                    <button class="lightbox-next"
+                        id="lightboxNext">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- RIGHT: PRODUCT INFO -->
+            <div class="product-info-col">
+
+                <!-- Brand -->
+                <p class="product-brand">FETCHLAB</p>
+
+                <!-- Title -->
+                <h1 class="product-title"
+                    id="productTitle">
+                    Loading...
+                </h1>
+
+                <!-- Rating -->
+                <div class="product-rating"
+                    id="productRating">
+                    <div class="rating-stars">
+                        ★★★★★
+                    </div>
+                    <span class="rating-count">
+                        (0 reviews)
+                    </span>
+                    <a href="#reviews"
+                        class="rating-link">
+                        Read reviews
+                    </a>
+                </div>
+
+                <!-- Price -->
+                <div class="product-price-row"
+                    id="productPriceRow">
+                    <span class="product-price-now"
+                        id="productPriceNow">
+                    </span>
+                    <span class="product-price-was"
+                        id="productPriceWas">
+                    </span>
+                    <span class="product-price-save"
+                        id="productPriceSave">
+                    </span>
+                </div>
+
+                <!-- Divider -->
+                <hr class="product-divider">
+
+                <!-- VARIANT SELECTOR -->
+                <div id="variantSelectors"></div>
+
+                <!-- QUANTITY -->
+                <div class="product-qty-row">
+                    <label class="variant-label">
+                        Quantity
+                    </label>
+                    <div class="qty-control">
+                        <button class="qty-btn"
+                            id="qtyMinus">−</button>
+                        <input type="number"
+                            id="qtyInput"
+                            value="1" min="1" max="10"
+                            class="qty-input">
+                        <button class="qty-btn"
+                            id="qtyPlus">+</button>
+                    </div>
+                </div>
+
+                <!-- ADD TO BAG -->
+                <div class="product-actions">
+                    <button class="btn-atc"
+                        id="addToBagBtn">
+                        <i class="fas fa-shopping-bag"></i>
+                        Add to Bag
+                    </button>
+                    <button class="btn-wishlist"
+                        id="wishlistBtn"
+                        aria-label="Add to wishlist">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+
+                <!-- AVAILABILITY -->
+                <p class="product-availability"
+                    id="productAvail">
+                    <i class="fas fa-check-circle"
+                        style="color:#2e7d32"></i>
+                    In stock — ships in 1–2 business days
+                </p>
+
+                <!-- TRUST BADGES -->
+                <div class="trust-badges">
+                    <div class="trust-item">
+                        <i class="fas fa-truck"></i>
+                        <span>Free shipping over $120</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-undo"></i>
+                        <span>30-day free returns</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Vet approved</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-lock"></i>
+                        <span>Secure checkout</span>
+                    </div>
+                </div>
+
+                <!-- DIVIDER -->
+                <hr class="product-divider">
+
+                <!-- ACCORDION: Description -->
+                <div class="accordion" id="acc1">
+                    <button class="acc-trigger"
+                        onclick="toggleAcc('acc1')">
+                        <span>Description</span>
+                        <i class="fas fa-plus acc-icon"></i>
+                    </button>
+                    <div class="acc-body">
+                        <p id="productDesc"></p>
+                    </div>
+                </div>
+
+                <!-- ACCORDION: Details -->
+                <div class="accordion" id="acc2">
+                    <button class="acc-trigger"
+                        onclick="toggleAcc('acc2')">
+                        <span>Product Details</span>
+                        <i class="fas fa-plus acc-icon"></i>
+                    </button>
+                    <div class="acc-body">
+                        <ul class="details-list"
+                            id="productDetailsList">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- ACCORDION: Size Guide -->
+                <div class="accordion" id="acc3">
+                    <button class="acc-trigger"
+                        onclick="toggleAcc('acc3')">
+                        <span>Size Guide</span>
+                        <i class="fas fa-plus acc-icon"></i>
+                    </button>
+                    <div class="acc-body">
+                        <p style="font-size:.85rem;
+                            color:var(--text-light);
+                            margin-bottom:12px">
+                            Measure your dog while standing.
+                        </p>
+                        <table class="size-table">
+                            <thead>
+                                <tr>
+                                    <th>Size</th>
+                                    <th>Neck (cm)</th>
+                                    <th>Chest (cm)</th>
+                                    <th>Back (cm)</th>
+                                    <th>Weight (kg)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>XS</td>
+                                    <td>20–25</td>
+                                    <td>30–38</td>
+                                    <td>20–25</td>
+                                    <td>1–3</td>
+                                </tr>
+                                <tr>
+                                    <td>S</td>
+                                    <td>25–32</td>
+                                    <td>38–48</td>
+                                    <td>25–32</td>
+                                    <td>3–7</td>
+                                </tr>
+                                <tr>
+                                    <td>M</td>
+                                    <td>32–40</td>
+                                    <td>48–60</td>
+                                    <td>32–40</td>
+                                    <td>7–15</td>
+                                </tr>
+                                <tr>
+                                    <td>L</td>
+                                    <td>40–48</td>
+                                    <td>60–72</td>
+                                    <td>40–50</td>
+                                    <td>15–28</td>
+                                </tr>
+                                <tr>
+                                    <td>XL</td>
+                                    <td>48–56</td>
+                                    <td>72–86</td>
+                                    <td>50–60</td>
+                                    <td>28–40</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <a href="size-guide.html"
+                            style="font-size:.82rem;
+                            text-decoration:underline;
+                            display:inline-block;
+                            margin-top:12px">
+                            Full Size Guide →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ACCORDION: Shipping -->
+                <div class="accordion" id="acc4">
+                    <button class="acc-trigger"
+                        onclick="toggleAcc('acc4')">
+                        <span>Shipping & Returns</span>
+                        <i class="fas fa-plus acc-icon"></i>
+                    </button>
+                    <div class="acc-body">
+                        <p style="font-size:.85rem;
+                            color:var(--text-light);
+                            line-height:1.7">
+                            <strong>Standard:</strong>
+                            7–14 business days — FREE over $120
+                            <br>
+                            <strong>Express:</strong>
+                            3–5 business days — $18.00
+                            <br><br>
+                            Free 30-day returns on all
+                            unused items.
+                            <a href="shipping.html"
+                                style="text-decoration:underline">
+                                Full policy →
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- RELATED PRODUCTS -->
+<section class="related-section"
+    id="relatedSection"
+    style="display:none">
+    <div class="container">
+        <div class="section-head">
+            <h2>You May Also Like</h2>
+            <a href="collection.html"
+                class="view-all">
+                View All →
+            </a>
+        </div>
+        <div class="product-grid"
+            id="relatedGrid"></div>
+    </div>
+</section>
+
+<!-- REVIEWS SECTION -->
+<section class="reviews-section-full"
+    id="reviews"
+    style="display:none">
+    <div class="container">
+        <div class="section-head">
+            <h2>Customer Reviews</h2>
+        </div>
+        <div class="reviews-summary">
+            <div class="reviews-score">
+                <span class="score-number">4.9</span>
+                <div class="score-stars">★★★★★</div>
+                <span class="score-count">
+                    Based on 24 reviews
+                </span>
+            </div>
+            <div class="reviews-bars">
+                <div class="rating-bar">
+                    <span>5 ★</span>
+                    <div class="bar">
+                        <div class="bar-fill"
+                            style="width:85%"></div>
+                    </div>
+                    <span>20</span>
+                </div>
+                <div class="rating-bar">
+                    <span>4 ★</span>
+                    <div class="bar">
+                        <div class="bar-fill"
+                            style="width:12%"></div>
+                    </div>
+                    <span>3</span>
+                </div>
+                <div class="rating-bar">
+                    <span>3 ★</span>
+                    <div class="bar">
+                        <div class="bar-fill"
+                            style="width:4%"></div>
+                    </div>
+                    <span>1</span>
+                </div>
+            </div>
+        </div>
+        <div class="reviews-list"
+            id="reviewsList">
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p>"Absolutely incredible quality. My golden retriever has never looked so stylish and she is clearly comfortable in it too."</p>
+                <div class="review-author">
+                    <strong>Sarah L.</strong>
+                    <span>London, UK · Verified Buyer</span>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p>"The packaging alone is worth it. Feels like a luxury unboxing experience. The product quality is exceptional."</p>
+                <div class="review-author">
+                    <strong>Michael C.</strong>
+                    <span>New York, USA · Verified Buyer</span>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p>"My second purchase from FETCHLAB. Consistent quality, ships fast, and customer service is excellent."</p>
+                <div class="review-author">
+                    <strong>Emma T.</strong>
+                    <span>Sydney, AU · Verified Buyer</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CART DRAWER -->
+<div class="drawer" id="cartDrawer">
+    <div class="drawer-head">
+        <h3>Shopping Bag</h3>
+        <button id="drawerClose">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    <div class="drawer-body" id="drawerBody"></div>
+    <div class="drawer-foot">
+        <div class="drawer-total">
+            <span>Subtotal</span>
+            <span id="drawerTotal">$0.00</span>
+        </div>
+        <button class="btn-main drawer-checkout-btn"
+            onclick="goToCheckout()"
+            style="width:100%;text-align:center;
+                   border:none;cursor:pointer;
+                   margin-top:12px">
+            Checkout
+        </button>
+        <a href="cart.html"
+            class="drawer-viewbag">
+            View bag →
+        </a>
+    </div>
+</div>
+<div class="overlay" id="overlay"></div>
+
+<div id="toasts" class="toasts"></div>
+
+<script src="../js/app.js"></script>
+<script src="../js/product.js"></script>
+</body>
+</html>
