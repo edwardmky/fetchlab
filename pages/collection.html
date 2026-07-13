@@ -2,66 +2,519 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width,
+                   initial-scale=1.0">
     <title>Shop All — FETCHLAB</title>
-    <link rel="icon" type="image/x-icon" href="../favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="../favicon.ico">
-    <link rel="apple-touch-icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta name="description"
+          content="Shop all FETCHLAB premium dog
+                   apparel and accessories.">
+    <link rel="icon"
+          type="image/x-icon"
+          href="../favicon.ico">
+    <link rel="stylesheet"
+          href="../css/styles.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-<nav class="nav"><div class="nav-inner"><div class="nav-left"><a href="../index.html" class="nav-link" style="font-size:.78rem">Home</a><a href="about.html" class="nav-link" style="font-size:.78rem">About</a></div><a href="../index.html" class="nav-logo">FETCHLAB</a><div class="nav-right"><button class="nav-icon" id="cartToggle"><i class="fas fa-shopping-bag"></i><span class="cart-badge" id="cartBadge">0</span></button></div></div></nav>
-<div class="page-title-bar"><h1>Shop All</h1></div>
-<aside class="coll-sidebar">
-    <div class="sidebar-group">
-        <h5>Category</h5>
 
-        <label class="sidebar-opt">
-            <input type="radio"
-                name="cat-filter"
-                value="all"
-                checked
-                onchange="filterCollection(this.value)">
-            All Products
-        </label>
+<!-- ====== TOP BAR ====== -->
+<div class="topbar">
+    <div class="topbar-inner">
+        <a href="shipping.html">
+            Free shipping on orders over $120
+        </a>
+        <span class="topbar-sep">|</span>
+        <a href="track-order.html">
+            Track your order
+        </a>
+        <span class="topbar-sep">|</span>
+        <a href="contact.html">
+            Need help? Contact us
+        </a>
+    </div>
+</div>
 
-        <label class="sidebar-opt">
-            <input type="radio"
-                name="cat-filter"
-                value="outerwear"
-                onchange="filterCollection(this.value)">
-            Outerwear
-        </label>
+<!-- ====== NAV ====== -->
+<nav class="nav" id="nav">
+    <div class="nav-inner">
 
-        <label class="sidebar-opt">
-            <input type="radio"
-                name="cat-filter"
-                value="lifestyle"
-                onchange="filterCollection(this.value)">
-            Lifestyle
-        </label>
+        <!-- LEFT SIDE -->
+        <div class="nav-left">
+            <button class="nav-hamburger"
+                    id="menuToggle"
+                    aria-label="Menu">
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links">
+                <div class="nav-dropdown">
+                    <a href="collection.html"
+                       class="nav-link">
+                        Shop
+                    </a>
+                    <div class="dropdown-panel">
+                        <div class="dropdown-grid">
+                            <div class="dropdown-col">
+                                <h6>Performance</h6>
+                                <a href="collection.html">
+                                    Jackets & Coats
+                                </a>
+                                <a href="collection.html">
+                                    Harnesses
+                                </a>
+                                <a href="collection.html">
+                                    Run Vests
+                                </a>
+                                <a href="collection.html">
+                                    Rain Gear
+                                </a>
+                            </div>
+                            <div class="dropdown-col">
+                                <h6>Lifestyle</h6>
+                                <a href="collection.html">
+                                    Collars
+                                </a>
+                                <a href="collection.html">
+                                    Leads
+                                </a>
+                                <a href="collection.html">
+                                    Bandanas
+                                </a>
+                                <a href="collection.html">
+                                    Sweaters
+                                </a>
+                            </div>
+                            <div class="dropdown-col">
+                                <h6>Home</h6>
+                                <a href="collection.html">
+                                    Beds
+                                </a>
+                                <a href="collection.html">
+                                    Blankets
+                                </a>
+                                <a href="collection.html">
+                                    Bowls
+                                </a>
+                                <a href="collection.html">
+                                    Carriers
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="collection.html"
+                   class="nav-link">
+                    New In
+                </a>
+                <a href="about.html"
+                   class="nav-link">
+                    Our Story
+                </a>
+            </div>
+        </div>
 
-        <label class="sidebar-opt">
-            <input type="radio"
-                name="cat-filter"
-                value="home"
-                onchange="filterCollection(this.value)">
-            Home
-        </label>
+        <!-- CENTER LOGO -->
+        <a href="../index.html" class="nav-logo">
+            FETCHLAB
+        </a>
 
-        <label class="sidebar-opt">
-            <input type="radio"
-                name="cat-filter"
-                value="carriers"
-                onchange="filterCollection(this.value)">
-            Carriers
-        </label>
+        <!-- RIGHT SIDE -->
+        <div class="nav-right">
+            <button class="nav-icon"
+                    id="searchToggle"
+                    aria-label="Search">
+                <i class="fas fa-search"></i>
+            </button>
+            <button class="nav-icon"
+                    id="cartToggle"
+                    aria-label="Shopping bag">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-badge
+                             cart-badge-sync"
+                      id="cartBadge">
+                    0
+                </span>
+            </button>
+        </div>
 
     </div>
-</aside>
-<div class="drawer" id="cartDrawer"><div class="drawer-head"><h3>Shopping Bag</h3><button id="drawerClose"><i class="fas fa-times"></i></button></div><div class="drawer-body" id="drawerBody"></div><div class="drawer-foot"><div class="drawer-total"><span>Subtotal</span><span id="drawerTotal">$0.00</span></div><a href="checkout.html" class="btn-main drawer-checkout-btn">Checkout</a></div></div><div class="overlay" id="overlay"></div>
+
+    <!-- SEARCH BAR -->
+    <div class="search-panel" id="searchPanel">
+        <div class="search-inner">
+            <input type="text"
+                   id="searchInput"
+                   placeholder="Search products..."
+                   autocomplete="off">
+            <button id="searchClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+    <div class="mm-header">
+        <span class="nav-logo">FETCHLAB</span>
+        <button id="mmClose">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    <div class="mm-body">
+        <a href="../index.html">Home</a>
+        <a href="collection.html">Shop All</a>
+        <a href="collection.html">New In</a>
+        <a href="collection.html">Performance</a>
+        <a href="collection.html">Lifestyle</a>
+        <a href="collection.html">Home</a>
+        <a href="about.html">Our Story</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <div class="mm-footer">
+        <a href="shipping.html">
+            Shipping & Returns
+        </a>
+        <a href="faq.html">FAQ</a>
+        <a href="track-order.html">Track Order</a>
+    </div>
+</div>
+
+<!-- PAGE TITLE -->
+<div class="page-title-bar">
+    <h1>Shop All</h1>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="page-body">
+    <div class="container">
+        <div class="coll-layout">
+
+            <!-- ====== LEFT SIDEBAR ====== -->
+            <aside class="coll-sidebar">
+
+                <!-- CATEGORY FILTER -->
+                <div class="sidebar-group">
+                    <h5>Category</h5>
+
+                    <label class="sidebar-opt">
+                        <input
+                            type="radio"
+                            name="cat-filter"
+                            value="all"
+                            checked
+                            onchange="
+                                filterCollection(
+                                    this.value
+                                )
+                            ">
+                        <span>All Products</span>
+                    </label>
+
+                    <label class="sidebar-opt">
+                        <input
+                            type="radio"
+                            name="cat-filter"
+                            value="outerwear"
+                            onchange="
+                                filterCollection(
+                                    this.value
+                                )
+                            ">
+                        <span>Outerwear</span>
+                    </label>
+
+                    <label class="sidebar-opt">
+                        <input
+                            type="radio"
+                            name="cat-filter"
+                            value="lifestyle"
+                            onchange="
+                                filterCollection(
+                                    this.value
+                                )
+                            ">
+                        <span>Lifestyle</span>
+                    </label>
+
+                    <label class="sidebar-opt">
+                        <input
+                            type="radio"
+                            name="cat-filter"
+                            value="home"
+                            onchange="
+                                filterCollection(
+                                    this.value
+                                )
+                            ">
+                        <span>Home</span>
+                    </label>
+
+                    <label class="sidebar-opt">
+                        <input
+                            type="radio"
+                            name="cat-filter"
+                            value="carriers"
+                            onchange="
+                                filterCollection(
+                                    this.value
+                                )
+                            ">
+                        <span>Carriers</span>
+                    </label>
+
+                </div>
+
+                <!-- SORT BY -->
+                <div class="sidebar-group">
+                    <h5>Sort By</h5>
+                    <select
+                        id="sortBy"
+                        onchange="sortCollection(
+                            this.value
+                        )"
+                        style="
+                            width:100%;
+                            padding:10px 12px;
+                            border:1px solid
+                                var(--border);
+                            font-family:var(--font);
+                            font-size:.85rem;
+                            outline:none;
+                            cursor:pointer;
+                            background:var(--white);
+                            color:var(--text);
+                        ">
+                        <option value="featured">
+                            Featured
+                        </option>
+                        <option value="price-low">
+                            Price: Low to High
+                        </option>
+                        <option value="price-high">
+                            Price: High to Low
+                        </option>
+                        <option value="name">
+                            Name A–Z
+                        </option>
+                    </select>
+                </div>
+
+                <!-- FREE SHIPPING BOX -->
+                <div style="
+                    margin-top:8px;
+                    padding:16px;
+                    background:var(--black);
+                    text-align:center">
+                    <div style="
+                        font-size:.72rem;
+                        font-weight:700;
+                        letter-spacing:1.5px;
+                        color:white;
+                        margin-bottom:4px">
+                        FREE SHIPPING
+                    </div>
+                    <div style="
+                        font-size:.75rem;
+                        color:rgba(255,255,255,.5)">
+                        On all orders over $120
+                    </div>
+                </div>
+
+            </aside>
+
+            <!-- ====== PRODUCT GRID ====== -->
+            <div>
+
+                <!-- Results count and sort info -->
+                <div style="
+                    display:flex;
+                    justify-content:space-between;
+                    align-items:center;
+                    margin-bottom:24px;
+                    padding-bottom:12px;
+                    border-bottom:1px solid
+                        var(--border-light)">
+                    <span
+                        id="prodCount"
+                        style="
+                            font-size:.78rem;
+                            color:var(--text-muted)">
+                        Loading products...
+                    </span>
+                    <span style="
+                        font-size:.78rem;
+                        color:var(--text-muted)">
+                        FETCHLAB Collection
+                    </span>
+                </div>
+
+                <!-- Products appear here -->
+                <div class="product-grid"
+                     id="collGrid">
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- ====== CART DRAWER ====== -->
+<div class="drawer" id="cartDrawer">
+    <div class="drawer-head">
+        <h3>Shopping Bag</h3>
+        <button id="drawerClose">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    <div class="drawer-body" id="drawerBody">
+    </div>
+    <div class="drawer-foot">
+        <div class="drawer-total">
+            <span>Subtotal</span>
+            <span id="drawerTotal">$0.00</span>
+        </div>
+        <p style="
+            font-size:.75rem;
+            color:var(--text-muted);
+            margin-bottom:12px">
+            Shipping calculated at checkout
+        </p>
+        <button
+            class="btn-main drawer-checkout-btn"
+            onclick="goToCheckout()"
+            style="
+                width:100%;
+                text-align:center;
+                border:none;
+                cursor:pointer;
+                display:block;
+                padding:16px">
+            Checkout
+        </button>
+        <a href="cart.html"
+           class="drawer-viewbag">
+            View full bag →
+        </a>
+    </div>
+</div>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay"></div>
+
+<!-- TOAST MESSAGES -->
 <div id="toasts" class="toasts"></div>
+
+<!-- SCRIPTS -->
 <script src="../js/app.js"></script>
+<script>
+
+    // ======================================
+    //   COLLECTION PAGE SPECIFIC CODE
+    // ======================================
+
+    // Track current filter and sort
+    var currentFilter = 'all';
+    var currentSort   = 'featured';
+
+    // Filter by category
+    function filterCollection(value) {
+        currentFilter = value;
+        applyFilterAndSort();
+    }
+
+    // Sort products
+    function sortCollection(value) {
+        currentSort = value;
+        applyFilterAndSort();
+    }
+
+    // Apply both filter and sort together
+    function applyFilterAndSort() {
+
+        // Start with all products
+        var list = [];
+        for (var i = 0; i < products.length; i++) {
+            list.push(products[i]);
+        }
+
+        // Apply category filter
+        if (currentFilter !== 'all') {
+            var filtered = [];
+            for (var i = 0; i < list.length; i++) {
+                if (list[i].cat === currentFilter) {
+                    filtered.push(list[i]);
+                }
+            }
+            list = filtered;
+        }
+
+        // Apply sort
+        if (currentSort === 'price-low') {
+            list.sort(function(a, b) {
+                return a.price - b.price;
+            });
+        } else if (currentSort === 'price-high') {
+            list.sort(function(a, b) {
+                return b.price - a.price;
+            });
+        } else if (currentSort === 'name') {
+            list.sort(function(a, b) {
+                return a.name.localeCompare(b.name);
+            });
+        }
+
+        // Update the grid
+        var grid = document.getElementById(
+            'collGrid'
+        );
+        var count = document.getElementById(
+            'prodCount'
+        );
+
+        if (!grid) return;
+
+        if (list.length === 0) {
+            grid.innerHTML =
+                '<div style="' +
+                'grid-column:1/-1;' +
+                'text-align:center;' +
+                'padding:60px;' +
+                'color:var(--text-muted)">' +
+                '<p>No products in this ' +
+                'category yet</p>' +
+                '</div>';
+        } else {
+            // Use '../' because this page is
+            // inside the pages/ folder
+            grid.innerHTML = list.map(function(p) {
+                return card(p, '../');
+            }).join('');
+        }
+
+        if (count) {
+            count.textContent =
+                list.length + ' products';
+        }
+    }
+
+    // Run when page loads
+    document.addEventListener(
+        'DOMContentLoaded',
+        function() {
+            // Wait for products to load
+            // then show them
+            setTimeout(function() {
+                applyFilterAndSort();
+            }, 800);
+        }
+    );
+
+</script>
+
 </body>
 </html>
