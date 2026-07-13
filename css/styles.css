@@ -983,12 +983,34 @@ img { max-width:100%; display:block; }
     border-bottom:1px solid var(--border-light);
 }
 .sidebar-opt {
-    display:flex; align-items:center; gap:8px;
-    padding:6px 0; font-size:.85rem;
-    color:var(--text-light); cursor:pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    font-size: .85rem;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: all .3s var(--ease);
 }
-.sidebar-opt:hover { color:var(--black); }
-.sidebar-opt input { accent-color:var(--black); cursor:pointer; }
+
+.sidebar-opt:hover {
+    color: var(--black);
+}
+
+.sidebar-opt input[type="radio"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: var(--black);
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.sidebar-opt input[type="radio"]:checked + span,
+.sidebar-opt:has(input:checked) {
+    color: var(--black);
+    font-weight: 600;
+}
 
 /* ABOUT PAGE */
 .about-hero {
