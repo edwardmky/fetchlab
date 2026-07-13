@@ -1897,3 +1897,7 @@ function toast(message, type) {
         }, 400);
     }, 3500);
 }
+// Collection page filter function
+function filterCollection(value) {
+    renderCollection(value);
+}
