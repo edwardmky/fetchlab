@@ -7,15 +7,735 @@
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon.ico">
     <link rel="apple-touch-icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,
+                   initial-scale=1.0">
+    <title>Our Story — FETCHLAB</title>
+    <meta name="description"
+          content="The story behind FETCHLAB.
+                   Premium dog lifestyle designed
+                   in Hong Kong.">
+    <link rel="icon"
+          type="image/x-icon"
+          href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon.ico">
+    <link rel="apple-touch-icon" href="../favicon.ico">
+    <link rel="stylesheet"
+          href="../css/styles.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- PAGE SPECIFIC STYLES -->
+    <style>
+        /* ===== ABOUT HERO ===== */
+        .about-hero-section {
+            position: relative;
+            height: 50vh;
+            min-height: 340px;
+            max-height: 500px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-warm);
+        }
+
+        .about-hero-section img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .about-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,.35);
+            z-index: 1;
+        }
+
+        .about-hero-text {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: var(--white);
+            padding: 0 24px;
+        }
+
+        .about-hero-text h1 {
+            font-family: var(--serif);
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 400;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+
+        .about-hero-text p {
+            font-size: .92rem;
+            opacity: .8;
+            margin-top: 12px;
+            font-weight: 300;
+        }
+
+        /* ===== ABOUT STORY SECTION ===== */
+        .about-story {
+            padding: 80px 0;
+        }
+
+        .about-story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .about-story-img {
+            aspect-ratio: 4/5;
+            background: var(--bg);
+            overflow: hidden;
+        }
+
+        .about-story-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-story-img-fallback {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            background: var(--bg-warm);
+        }
+
+        .about-story-text {
+            max-width: 480px;
+        }
+
+        .about-story-label {
+            font-size: .68rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .about-story-text h2 {
+            font-family: var(--serif);
+            font-size: clamp(1.4rem, 3vw, 1.9rem);
+            font-weight: 400;
+            line-height: 1.3;
+            margin-bottom: 24px;
+            color: var(--black);
+        }
+
+        .about-story-text p {
+            font-size: .92rem;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 16px;
+            font-weight: 300;
+        }
+
+        /* STATS ROW */
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            margin-top: 36px;
+            border: 1px solid var(--border);
+        }
+
+        .about-stat {
+            padding: 24px 20px;
+            text-align: center;
+            border-right: 1px solid var(--border);
+        }
+
+        .about-stat:last-child {
+            border-right: none;
+        }
+
+        .about-stat-number {
+            font-family: var(--serif);
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: var(--black);
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .about-stat-label {
+            font-size: .68rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        /* ===== VALUES SECTION ===== */
+        .about-values-section {
+            padding: 80px 0;
+            background: var(--bg);
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .about-values-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .about-values-header h2 {
+            font-family: var(--serif);
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+
+        .about-values-header p {
+            font-size: .88rem;
+            color: var(--text-light);
+        }
+
+        .about-values-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .about-value-card {
+            padding: 32px;
+            border: 1px solid var(--border);
+            background: var(--white);
+            transition: all .3s var(--ease);
+        }
+
+        .about-value-card:hover {
+            border-color: var(--black);
+        }
+
+        .about-value-card i {
+            font-size: 1.2rem;
+            margin-bottom: 16px;
+            color: var(--text);
+            display: block;
+        }
+
+        .about-value-card h3 {
+            font-size: .88rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .about-value-card p {
+            font-size: .82rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .about-hero-section {
+                height: 40vh;
+                min-height: 260px;
+            }
+
+            .about-story-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .about-story-text {
+                max-width: 100%;
+                padding: 0;
+            }
+
+            .about-stats {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .about-stat {
+                padding: 16px 12px;
+            }
+
+            .about-stat-number {
+                font-size: 1.4rem;
+            }
+
+            .about-stat-label {
+                font-size: .6rem;
+            }
+
+            .about-values-row {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .about-value-card {
+                padding: 24px;
+            }
+        }
+    </style>
 </head>
 <body>
-<nav class="nav"><div class="nav-inner"><div class="nav-left"><a href="../index.html" class="nav-link" style="font-size:.78rem">Home</a><a href="collection.html" class="nav-link" style="font-size:.78rem">Shop</a></div><a href="../index.html" class="nav-logo">FETCHLAB</a><div class="nav-right"><button class="nav-icon" id="cartToggle"><i class="fas fa-shopping-bag"></i><span class="cart-badge" id="cartBadge">0</span></button></div></div></nav>
-<div class="about-hero"><img src="../images/brand/story-1.jpg" alt="FETCHLAB Story" onerror="this.style.display='none'"><div class="about-hero-overlay"></div><div class="about-hero-text"><h1>Our Story</h1></div></div>
-<section class="about-section"><div class="container"><div class="about-grid"><div class="about-img"><img src="../images/brand/story-2.jpg" alt="FETCHLAB" onerror="this.parentNode.style.background='var(--bg-warm)';this.parentNode.innerHTML='<div style=font-size:8rem;display:flex;align-items:center;justify-content:center;height:100%>🐕‍🦺</div>'"></div><div class="about-text"><h2>Designed in Hong Kong. Loved Worldwide.</h2><p>FETCHLAB was founded in 2026 by dog lovers who couldn't find a single brand that combined genuine performance with luxury aesthetics.</p><p>Every product is designed at our Hong Kong studio, crafted from premium materials, and tested to the highest standards before it reaches your dog.</p><p>We serve over 12,000 happy dogs in 45+ countries. Our mission is simple: make products worthy of the dogs who wear them.</p><a href="collection.html" class="btn-dark">Shop the Collection</a></div></div><div class="about-values-grid"><div class="about-value"><i class="fas fa-flask"></i><h3>Lab Tested</h3><p>Every product passes our 12-point quality protocol before launch.</p></div><div class="about-value"><i class="fas fa-leaf"></i><h3>Sustainable</h3><p>Eco-friendly packaging, responsible sourcing, ethical manufacturing.</p></div><div class="about-value"><i class="fas fa-heart"></i><h3>Made with Love</h3><p>Designed by dog lovers, tested on real dogs, crafted with obsessive care.</p></div></div></div></section>
-<div class="drawer" id="cartDrawer"><div class="drawer-head"><h3>Shopping Bag</h3><button id="drawerClose"><i class="fas fa-times"></i></button></div><div class="drawer-body" id="drawerBody"></div><div class="drawer-foot"><div class="drawer-total"><span>Subtotal</span><span id="drawerTotal">$0.00</span></div><a href="checkout.html" class="btn-main drawer-checkout-btn">Checkout</a></div></div><div class="overlay" id="overlay"></div>
+
+<!-- ====== TOP BAR ====== -->
+<div class="topbar">
+    <div class="topbar-inner">
+        <a href="shipping.html">
+            Free shipping on orders over $120
+        </a>
+        <span class="topbar-sep">|</span>
+        <a href="contact.html">
+            Need help? Contact us
+        </a>
+    </div>
+</div>
+
+<!-- ====== NAV ====== -->
+<nav class="nav" id="nav">
+    <div class="nav-inner">
+
+        <div class="nav-left">
+            <button class="nav-hamburger"
+                    id="menuToggle"
+                    aria-label="Menu">
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links">
+                <a href="../index.html"
+                   class="nav-link"
+                   style="margin-right: 12px;">
+                    Home
+                </a>
+                <a href="collection.html"
+                   class="nav-link"
+                   style="margin-right: 12px;">
+                    Shop
+                </a>
+                <a href="about.html"
+                   class="nav-link">
+                    Our Story
+                </a>
+            </div>
+        </div>
+
+        <a href="../index.html"
+           class="nav-logo">
+            FETCHLAB
+        </a>
+
+        <div class="nav-right">
+            <button class="nav-icon"
+                    id="searchToggle"
+                    aria-label="Search">
+                <i class="fas fa-search"></i>
+            </button>
+            <button class="nav-icon"
+                    id="cartToggle"
+                    aria-label="Cart">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-badge
+                             cart-badge-sync"
+                      id="cartBadge">
+                    0
+                </span>
+            </button>
+        </div>
+
+    </div>
+
+    <!-- SEARCH -->
+    <div class="search-panel" id="searchPanel">
+        <div class="search-inner">
+            <input type="text"
+                   id="searchInput"
+                   placeholder="Search products..."
+                   autocomplete="off">
+            <button id="searchClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+    <div class="mm-header">
+        <span class="nav-logo"
+              style="position:static;
+                     transform:none">
+            FETCHLAB
+        </span>
+        <button id="mmClose">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    <div class="mm-body">
+        <a href="../index.html">Home</a>
+        <a href="collection.html">Shop All</a>
+        <a href="collection.html">New In</a>
+        <a href="about.html">Our Story</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <div class="mm-footer">
+        <a href="shipping.html">
+            Shipping & Returns
+        </a>
+        <a href="faq.html">FAQ</a>
+    </div>
+</div>
+
+<!-- ====== HERO ====== -->
+<section class="about-hero-section">
+    <img src="../images/brand/story-1.jpg"
+         alt="FETCHLAB Our Story"
+         onerror="this.style.display='none'">
+    <div class="about-hero-overlay"></div>
+    <div class="about-hero-text">
+        <h1>Our Story</h1>
+        <p>Designed in Hong Kong.
+           Loved worldwide.</p>
+    </div>
+</section>
+
+<!-- ====== STORY SECTION ====== -->
+<section class="about-story">
+    <div class="container">
+        <div class="about-story-grid">
+
+            <!-- LEFT: IMAGE -->
+            <div class="about-story-img">
+                <img src="../images/brand/story-2.jpg"
+                     alt="FETCHLAB Story"
+                     onerror="
+                         this.style.display='none';
+                         this.nextElementSibling
+                         .style.display='flex'
+                     ">
+                <div class="about-story-img-fallback"
+                     style="display:none">
+                    🐕‍🦺
+                </div>
+            </div>
+
+            <!-- RIGHT: TEXT -->
+            <div class="about-story-text">
+
+                <span class="about-story-label">
+                    Founded 2024 · Hong Kong
+                </span>
+
+                <h2>
+                    Where Performance
+                    Meets Craftsmanship
+                </h2>
+
+                <p>
+                    FETCHLAB was founded by dog lovers
+                    who couldn't find a single brand
+                    that combined genuine performance
+                    with luxury aesthetics.
+                </p>
+
+                <p>
+                    Every product is designed at our
+                    Hong Kong studio, crafted from
+                    premium materials, and tested to
+                    the highest standards before it
+                    reaches your dog.
+                </p>
+
+                <p>
+                    We serve over 12,000 happy dogs
+                    in 45+ countries. Our mission is
+                    simple: make products worthy of
+                    the dogs who wear them.
+                </p>
+
+                <a href="collection.html"
+                   class="btn-dark"
+                   style="margin-top: 12px;">
+                    Shop the Collection
+                </a>
+
+                <!-- STATS -->
+                <div class="about-stats">
+                    <div class="about-stat">
+                        <span class="about-stat-number">
+                            12K+
+                        </span>
+                        <span class="about-stat-label">
+                            Dogs
+                        </span>
+                    </div>
+                    <div class="about-stat">
+                        <span class="about-stat-number">
+                            45+
+                        </span>
+                        <span class="about-stat-label">
+                            Countries
+                        </span>
+                    </div>
+                    <div class="about-stat">
+                        <span class="about-stat-number">
+                            4.9★
+                        </span>
+                        <span class="about-stat-label">
+                            Rating
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ====== VALUES SECTION ====== -->
+<section class="about-values-section">
+    <div class="container">
+
+        <div class="about-values-header">
+            <h2>What We Stand For</h2>
+            <p>The principles behind every
+               FETCHLAB product</p>
+        </div>
+
+        <div class="about-values-row">
+
+            <div class="about-value-card">
+                <i class="fas fa-flask"></i>
+                <h3>Lab Tested</h3>
+                <p>
+                    Every product passes our
+                    12-point quality protocol
+                    before launch.
+                    No shortcuts, no compromises.
+                </p>
+            </div>
+
+            <div class="about-value-card">
+                <i class="fas fa-leaf"></i>
+                <h3>Sustainable</h3>
+                <p>
+                    Eco-friendly packaging,
+                    responsible sourcing, and
+                    ethical manufacturing.
+                    Better for the planet your
+                    dog runs on.
+                </p>
+            </div>
+
+            <div class="about-value-card">
+                <i class="fas fa-heart"></i>
+                <h3>Made with Love</h3>
+                <p>
+                    Designed by dog lovers,
+                    tested on real dogs, crafted
+                    with the kind of care that
+                    makes a difference.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- ====== NEWSLETTER ====== -->
+<section class="newsletter">
+    <div class="container">
+        <div class="nl-inner">
+            <h2>Get 15% Off Your First Order</h2>
+            <p>
+                Subscribe for early access,
+                exclusive offers, and dog care tips.
+            </p>
+            <form class="nl-form" id="nlForm">
+                <input type="email"
+                       placeholder="Email address"
+                       required>
+                <button type="submit">
+                    Subscribe
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+
+            <div class="footer-col footer-brand-col">
+                <h3 class="footer-logo-text">
+                    FETCHLAB
+                </h3>
+                <p>
+                    Premium dog lifestyle.
+                    Designed in Hong Kong.
+                </p>
+                <div class="social-row">
+                    <a href="https://instagram.com/fetchlab"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://tiktok.com/@fetchlab"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="https://pinterest.com/fetchlab"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Pinterest">
+                        <i class="fab fa-pinterest-p"></i>
+                    </a>
+                    <a href="https://facebook.com/fetchlab"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Shop</h4>
+                <a href="collection.html">
+                    New Arrivals
+                </a>
+                <a href="collection.html">
+                    Performance
+                </a>
+                <a href="collection.html">
+                    Lifestyle
+                </a>
+                <a href="collection.html">
+                    Home & Living
+                </a>
+            </div>
+
+            <div class="footer-col">
+                <h4>About</h4>
+                <a href="about.html">Our Story</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Help</h4>
+                <a href="contact.html">
+                    Contact Us
+                </a>
+                <a href="shipping.html">
+                    Shipping & Returns
+                </a>
+                <a href="size-guide.html">
+                    Size Guide
+                </a>
+                <a href="faq.html">FAQ</a>
+                <a href="track-order.html">
+                    Track Order
+                </a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="privacy.html">
+                    Privacy Policy
+                </a>
+                <a href="terms.html">
+                    Terms & Conditions
+                </a>
+                <p class="footer-contact-info">
+                    hello@fetchlab.co<br>
+                    WhatsApp: +852 0000 0000<br>
+                    Mon–Fri 10AM–7PM HKT
+                </p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span>
+                © 2024 FETCHLAB.
+                All rights reserved.
+            </span>
+            <div class="pay-icons">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-amex"></i>
+                <i class="fab fa-cc-paypal"></i>
+                <i class="fab fa-cc-apple-pay"></i>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+<!-- ====== CART DRAWER ====== -->
+<div class="drawer" id="cartDrawer">
+    <div class="drawer-head">
+        <h3>Shopping Bag</h3>
+        <button id="drawerClose">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    <div class="drawer-body"
+         id="drawerBody">
+    </div>
+    <div class="drawer-foot">
+        <div class="drawer-total">
+            <span>Subtotal</span>
+            <span id="drawerTotal">$0.00</span>
+        </div>
+        <button
+            class="btn-main drawer-checkout-btn"
+            onclick="goToCheckout()"
+            style="width:100%;
+                   text-align:center;
+                   border:none;
+                   cursor:pointer;
+                   margin-top:12px;
+                   padding:16px">
+            Checkout
+        </button>
+        <a href="cart.html"
+           class="drawer-viewbag">
+            View full bag →
+        </a>
+    </div>
+</div>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay"></div>
+
+<!-- TOAST -->
 <div id="toasts" class="toasts"></div>
+
+<!-- SCRIPTS -->
 <script src="../js/app.js"></script>
+
 </body>
 </html>
