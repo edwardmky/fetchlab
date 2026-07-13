@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Bag — FETCHLAB</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<nav class="nav"><div class="nav-inner"><div class="nav-left"><a href="../index.html" class="nav-link" style="font-size:.78rem">← Continue Shopping</a></div><a href="../index.html" class="nav-logo">FETCHLAB</a><div class="nav-right"><button class="nav-icon" id="cartToggle"><i class="fas fa-shopping-bag"></i><span class="cart-badge" id="cartBadge">0</span></button></div></div></nav>
+<div class="page-title-bar"><h1>Shopping Bag</h1></div>
+<div class="page-body"><div class="container"><div style="display:grid;grid-template-columns:1fr 340px;gap:40px;align-items:start"><div id="cartPageItems"></div><div class="summary-box"><h3>Order Summary</h3><div class="s-line"><span>Subtotal</span><span id="cpSub">$0.00</span></div><div class="s-line"><span>Shipping</span><span id="cpShip">—</span></div><div class="s-line" style="font-size:.75rem;color:var(--text-muted)"><span>Free on orders $120+</span><span></span></div><div class="s-line total"><span>Total</span><span id="cpTot">$0.00</span></div><a href="checkout.html" class="btn-main" style="width:100%;text-align:center;display:block;margin-top:16px">Checkout</a></div></div></div></div>
+<div class="drawer" id="cartDrawer"><div class="drawer-head"><h3>Shopping Bag</h3><button id="drawerClose"><i class="fas fa-times"></i></button></div><div class="drawer-body" id="drawerBody"></div><div class="drawer-foot"><div class="drawer-total"><span>Subtotal</span><span id="drawerTotal">$0.00</span></div><a href="checkout.html" class="btn-main drawer-checkout-btn">Checkout</a></div></div><div class="overlay" id="overlay"></div>
+<div id="toasts" class="toasts"></div>
+<script src="../js/app.js"></script>
+</body>
+</html>
